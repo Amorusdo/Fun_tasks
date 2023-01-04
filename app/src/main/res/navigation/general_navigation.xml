@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/general_navigation"
+    app:startDestination="@id/welcomeFragment">
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.compozsitions.presentation.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_chooseLevelFragment"
+            app:destination="@id/chooseLevelFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseLevelFragment"
+        android:name="com.example.compozsitions.presentation.ChooseLevel"
+        android:label="fragment_choose_level">
+        <action
+            android:id="@+id/action_chooseLevelFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+        <argument
+            android:name="rule"
+            app:argType="string" />
+        <argument
+            android:name="rule_1"
+            app:argType="string" />
+        <argument
+            android:name="rule_2"
+            app:argType="string" />
+        <argument
+            android:name="rule_3"
+            app:argType="string" />
+        <argument
+            android:name="rule_4"
+            app:argType="string" />
+        <argument
+            android:name="rule_5"
+            app:argType="string" />
+        <argument
+            android:name="rule_6"
+            app:argType="string" />
+        <argument
+            android:name="rule_7"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.example.compozsitions.presentation.GameFragment"
+        android:label="fragment_game"
+        tools:layout="@layout/fragment_game" >
+        <action
+            android:id="@+id/action_gameFragment_to_gameFinishFragment"
+            app:destination="@id/gameFinishFragment" />
+        <argument
+            android:name="textGame"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameFinishFragment"
+        android:name="com.example.compozsitions.presentation.GameFinishFragment"
+        android:label="fragment_game_finish"
+        tools:layout="@layout/fragment_game_finish" >
+        <action
+            android:id="@+id/action_gameFinishFragment_to_chooseLevelFragment"
+            app:destination="@id/chooseLevelFragment" />
+        <argument
+            android:name="finishText"
+            app:argType="string" />
+    </fragment>
+</navigation>
